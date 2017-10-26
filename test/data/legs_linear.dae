@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<author>Raik</author>
+			<authoring_tool>Maya2009 | ColladaMaya v3.05B</authoring_tool>
+			<comments>ColladaMaya export options: bakeTransforms=0;exportPolygonMeshes=1;bakeLighting=0;isSampling=0;
+curveConstrainSampling=0;removeStaticCurves=1;exportCameraAsLookat=0;
+exportLights=0;exportCameras=0;exportJointsAndSkin=1;
+exportAnimations=1;exportTriangles=1;exportInvisibleNodes=0;
+exportNormals=1;exportTexCoords=1;
+exportVertexColors=0;exportVertexColorsAnimation=0;exportTangents=0;
+exportTexTangents=0;exportConstraints=1;exportPhysics=0;exportXRefs=0;
+dereferenceXRefs=0;cameraXFov=0;cameraYFov=0</comments>
+			<source_data>file:///C:/Documents%20and%20Settings/Raik/Mes%20documents/maya/projects/default/scenes/legs_allkeyed.mb</source_data>
+		</contributor>
+		<created>2009-05-24T13:27:32Z</created>
+		<modified>2009-05-24T13:27:32Z</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_animations>
+		<animation id="root.rotateY">
+			<source id="root.rotateY_root_rotateY.ANGLE-input">
+				<float_array id="root.rotateY_root_rotateY.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#root.rotateY_root_rotateY.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="root.rotateY_root_rotateY.ANGLE-output">
+				<float_array id="root.rotateY_root_rotateY.ANGLE-output-array" count="24">0 -2.08 -7.04 -12.96 -17.92 -20 -19.0394 -16.4815 -12.8125 -8.518520000000001 -4.08565 0 1.85185 6.48148 12.5 18.5185 23.1481 25 23.7269 20.3704 15.625 10.1852 4.74537 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#root.rotateY_root_rotateY.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="root.rotateY_root_rotateY.ANGLE-interpolations">
+				<Name_array id="root.rotateY_root_rotateY.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#root.rotateY_root_rotateY.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="root.rotateY_root_rotateY.ANGLE-sampler">
+				<input semantic="INPUT" source="#root.rotateY_root_rotateY.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#root.rotateY_root_rotateY.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#root.rotateY_root_rotateY.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#root.rotateY_root_rotateY.ANGLE-sampler" target="root/rotateY.ANGLE"/>
+		</animation>
+		<animation id="LeftForeLeg.rotateX">
+			<source id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-input">
+				<float_array id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-output">
+				<float_array id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-output-array" count="24">0 0 0 0 -0 -0 -0 0 0 0 0 0 1.48148 5.18518 10 14.8148 18.5185 20 18.9815 16.2963 12.5 8.148149999999999 3.7963 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-interpolations">
+				<Name_array id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-sampler">
+				<input semantic="INPUT" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#LeftForeLeg.rotateX_LeftForeLeg_rotateX.ANGLE-sampler" target="LeftForeLeg/rotateX.ANGLE"/>
+		</animation>
+		<animation id="LeftForeLeg.rotateY">
+			<source id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-input">
+				<float_array id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-output">
+				<float_array id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-output-array" count="24">0 2.08 7.04 12.96 17.92 20 18.5185 14.8148 10 5.18519 1.48148 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-interpolations">
+				<Name_array id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-sampler">
+				<input semantic="INPUT" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#LeftForeLeg.rotateY_LeftForeLeg_rotateY.ANGLE-sampler" target="LeftForeLeg/rotateY.ANGLE"/>
+		</animation>
+		<animation id="LeftForeLeg.rotateZ">
+			<source id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-input">
+				<float_array id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-output">
+				<float_array id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-output-array" count="24">0 4.68 15.84 29.16 40.32 45 42.5926 36.2963 27.5 17.5926 7.96296 0 -2.59259 -9.074070000000001 -17.5 -25.9259 -32.4074 -35 -33.2176 -28.5185 -21.875 -14.2593 -6.64352 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-interpolations">
+				<Name_array id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-sampler">
+				<input semantic="INPUT" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#LeftForeLeg.rotateZ_LeftForeLeg_rotateZ.ANGLE-sampler" target="LeftForeLeg/rotateZ.ANGLE"/>
+		</animation>
+		<animation id="leftLeg.rotateZ">
+			<source id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-input">
+				<float_array id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-output">
+				<float_array id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-output-array" count="24">0 -2.6 -8.800000000000001 -16.2 -22.4 -25 -23.9005 -20.9259 -16.5625 -11.2963 -5.61342 0 2.96297 10.3704 20 29.6296 37.037 40 37.963 32.5926 25 16.2963 7.5926 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-interpolations">
+				<Name_array id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-sampler">
+				<input semantic="INPUT" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#leftLeg.rotateZ_leftLeg_rotateZ.ANGLE-sampler" target="leftLeg/rotateZ.ANGLE"/>
+		</animation>
+		<animation id="rightForeLeg.rotateX">
+			<source id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-input">
+				<float_array id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-output">
+				<float_array id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-output-array" count="24">0 2.6 8.800000000000001 16.2 22.4 25 23.1481 18.5185 12.5 6.48148 1.85185 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-interpolations">
+				<Name_array id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-sampler">
+				<input semantic="INPUT" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#rightForeLeg.rotateX_rightForeLeg_rotateX.ANGLE-sampler" target="rightForeLeg/rotateX.ANGLE"/>
+		</animation>
+		<animation id="rightForeLeg.rotateY">
+			<source id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-input">
+				<float_array id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-output">
+				<float_array id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-output-array" count="24">0 0 0 0 0 0 0 0 0 0 0 0 1.11111 3.88889 7.5 11.1111 13.8889 15 14.2361 12.2222 9.375 6.11111 2.84722 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-interpolations">
+				<Name_array id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-sampler">
+				<input semantic="INPUT" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#rightForeLeg.rotateY_rightForeLeg_rotateY.ANGLE-sampler" target="rightForeLeg/rotateY.ANGLE"/>
+		</animation>
+		<animation id="rightForeLeg.rotateZ">
+			<source id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-input">
+				<float_array id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-output">
+				<float_array id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-output-array" count="24">0 -3.64 -12.32 -22.68 -31.36 -35 -33.2176 -28.5185 -21.875 -14.2593 -6.64352 0 2.59259 9.074070000000001 17.5 25.9259 32.4074 35 33.2176 28.5185 21.875 14.2593 6.64352 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-interpolations">
+				<Name_array id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-sampler">
+				<input semantic="INPUT" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#rightForeLeg.rotateZ_rightForeLeg_rotateZ.ANGLE-sampler" target="rightForeLeg/rotateZ.ANGLE"/>
+		</animation>
+		<animation id="rightLeg.rotateZ">
+			<source id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-input">
+				<float_array id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-input-array" count="24">0.041666 0.083333 0.125 0.166667 0.208333 0.25 0.291667 0.333333 0.375 0.416667 0.458333 0.5 0.541667 0.583333 0.625 0.666667 0.708333 0.75 0.791667 0.833333 0.875 0.916667 0.958333 1</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-input-array">
+						<param name="TIME" type="float"/>
+					</accessor>
+				</technique_common>
+				<technique profile="MAYA">
+					<pre_infinity>CONSTANT</pre_infinity>
+					<post_infinity>CONSTANT</post_infinity>
+				</technique>
+			</source>
+			<source id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-output">
+				<float_array id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-output-array" count="24">0 5.2 17.6 32.4 44.8 50 47.1065 39.6296 29.375 18.1481 7.75463 0 -1.48148 -5.18518 -10 -14.8148 -18.5185 -20 -18.9815 -16.2963 -12.5 -8.148149999999999 -3.7963 0</float_array>
+				<technique_common>
+					<accessor count="24" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-output-array">
+						<param name="ANGLE" type="float"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<source id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-interpolations">
+				<Name_array id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-interpolations-array" count="24">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+				<technique_common>
+					<accessor count="24" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-interpolations-array">
+						<param name="INTERPOLATION" type="Name"/>
+					</accessor>
+				</technique_common>
+			</source>
+			<sampler id="rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-sampler">
+				<input semantic="INPUT" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-input"/>
+				<input semantic="OUTPUT" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-output"/>
+				<input semantic="INTERPOLATION" source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-interpolations"/>
+			</sampler>
+			<channel source="#rightLeg.rotateZ_rightLeg_rotateZ.ANGLE-sampler" target="rightLeg/rotateZ.ANGLE"/>
+		</animation>
+	</library_animations>
+	<library_materials>
+		<material id="lambert1" name="lambert1">
+			<instance_effect url="#lambert1-fx"/>
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="lambert1-fx">
+			<profile_COMMON>
+				<technique sid="common">
+					<lambert>
+						<emission>
+							<color>0 0 0 1</color>
+						</emission>
+						<ambient>
+							<color>0 0 0 1</color>
+						</ambient>
+						<diffuse>
+							<color>0.4 0.4 0.4 0.8</color>
+						</diffuse>
+						<transparent opaque="RGB_ZERO">
+							<color>0 0 0 1</color>
+						</transparent>
+						<transparency>
+							<float>1</float>
+						</transparency>
+					</lambert>
+					<extra>
+						<technique profile="FCOLLADA"/>
+					</extra>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_geometries>
+		<geometry id="pCubeShape1" name="pCubeShape1">
+			<mesh>
+				<source id="pCubeShape1-positions" name="position">
+					<float_array id="pCubeShape1-positions-array" count="96">-0.5 -0.5 0.5 -0.166667 -1.2265 0.591361 0.166667 -1.2265 0.591361 0.5 -0.5 0.5 -0.5 0.5 0.5 -0.166667 0.5 0.5 0.166667 0.5 0.5 0.5 0.5 0.5 -0.5 0.5 -0.5 -0.166667 0.5 -0.5 0.166667 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.166667 -1.2265 -0.408639 0.166667 -1.2265 -0.408639 0.5 -0.5 -0.5 -0.5 -2.7684 -0.209141 -0.166667 -2.76882 -0.209141 -0.166667 -2.76882 0.790859 -0.5 -2.7684 0.790859 0.166667 -2.76882 -0.209141 0.5 -2.7684 -0.209141 0.5 -2.7684 0.790859 0.166667 -2.76882 0.790859 -0.5 -4.81083 -0.5 -0.166667 -4.81125 -0.5 -0.166667 -4.81125 0.5 -0.5 -4.81083 0.5 0.166667 -4.81125 -0.5 0.5 -4.81083 -0.5 0.5 -4.81083 0.5 0.166667 -4.81125 0.5</float_array>
+					<technique_common>
+						<accessor count="32" source="#pCubeShape1-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="pCubeShape1-normals" name="normal">
+					<float_array id="pCubeShape1-normals-array" count="324">-0.099965 0.033321 0.994433 -0.050047 0.043138 0.997815 -0.050047 0.043138 0.997815 -0.099965 0.033321 0.994433 0.050047 0.043138 0.997815 0.050047 0.043138 0.997815 0.099965 0.033321 0.994433 0.099965 0.033321 0.994433 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0.099965 -0.033321 -0.994433 0.050047 -0.043138 -0.997815 0.050047 -0.043138 -0.997815 0.099965 -0.033321 -0.994433 -0.050047 -0.043138 -0.997815 -0.050047 -0.043138 -0.997815 -0.099965 -0.033321 -0.994433 -0.099965 -0.033321 -0.994433 -0.00125 -0.999999 0 -0.00125 -0.999999 0 -0.00125 -0.999999 0 -0.00125 -0.999999 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0.00125 -0.999999 0 0.00125 -0.999999 0 0.00125 -0.999999 0 0.00125 -0.999999 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.00324 -0.127625 -0.9918169999999999 -0.00324 -0.127625 -0.9918169999999999 -0.00324 -0.127625 -0.9918169999999999 -0.00324 -0.127625 -0.9918169999999999 1 0 0 1 0 0 1 0 0 1 0 0 0.00324 0.127625 0.9918169999999999 0.00324 0.127625 0.9918169999999999 0.00324 0.127625 0.9918169999999999 0.00324 0.127625 0.9918169999999999 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.00324 -0.127625 -0.9918169999999999 0.00324 -0.127625 -0.9918169999999999 0.00324 -0.127625 -0.9918169999999999 0.00324 -0.127625 -0.9918169999999999 1 0 0 1 0 0 1 0 0 1 0 0 -0.00324 0.127625 0.9918169999999999 -0.00324 0.127625 0.9918169999999999 -0.00324 0.127625 0.9918169999999999 -0.00324 0.127625 0.9918169999999999 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0.000176 0.140986 -0.990012 0.000176 0.140986 -0.990012 0.000176 0.140986 -0.990012 0.000176 0.140986 -0.990012 1 0 0 1 0 0 1 0 0 1 0 0 -0.000176 -0.140986 0.990012 -0.000176 -0.140986 0.990012 -0.000176 -0.140986 0.990012 -0.000176 -0.140986 0.990012 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -0.000176 0.140986 -0.990012 -0.000176 0.140986 -0.990012 -0.000176 0.140986 -0.990012 -0.000176 0.140986 -0.990012 1 0 0 1 0 0 1 0 0 1 0 0 0.000176 -0.140986 0.990012 0.000176 -0.140986 0.990012 0.000176 -0.140986 0.990012 0.000176 -0.140986 0.990012 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+					<technique_common>
+						<accessor count="108" source="#pCubeShape1-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="pCubeShape1-map1" name="map1">
+					<float_array id="pCubeShape1-map1-array" count="80">0.375 0 0.458333 0 0.541667 0 0.625 0 0.375 0.25 0.458333 0.25 0.541667 0.25 0.625 0.25 0.375 0.5 0.458333 0.5 0.541667 0.5 0.625 0.5 0.375 0.75 0.458333 0.75 0.541667 0.75 0.625 0.75 0.375 1 0.458333 1 0.541667 1 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25 0.375 0.75 0.458333 0.75 0.458333 1 0.375 1 0.541667 0.75 0.625 0.75 0.625 1 0.541667 1 0.375 0.75 0.458333 0.75 0.458333 1 0.375 1 0.541667 0.75 0.625 0.75 0.625 1 0.541667 1</float_array>
+					<technique_common>
+						<accessor count="40" source="#pCubeShape1-map1-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="pCubeShape1-vertices">
+					<input semantic="POSITION" source="#pCubeShape1-positions"/>
+				</vertices>
+				<triangles count="60" material="initialShadingGroup">
+					<input offset="0" semantic="VERTEX" source="#pCubeShape1-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#pCubeShape1-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#pCubeShape1-map1" set="0"/>
+					<p>1 1 1 5 2 5 0 0 0 0 0 0 5 2 5 4 3 4 1 1 1 2 4 2 5 2 5 5 2 5 2 4 2 6 5 6 2 4 2 3 6 3 6 5 6 6 5 6 3 6 3 7 7 7 4 8 4 5 9 5 8 11 8 8 11 8 5 9 5 9 10 9 5 9 5 6 12 6 9 10 9 9 10 9 6 12 6 10 13 10 6 12 6 7 14 7 10 13 10 10 13 10 7 14 7 11 15 11 8 16 8 9 17 9 12 19 12 12 19 12 9 17 9 13 18 13 9 17 9 10 20 10 13 18 13 13 18 13 10 20 10 14 21 14 11 22 11 15 23 15 10 20 10 10 20 10 15 23 15 14 21 14 24 24 32 25 25 33 27 27 35 27 27 35 25 25 33 26 26 34 13 28 13 14 29 14 1 31 17 1 31 17 14 29 14 2 30 18 28 32 36 29 33 37 31 35 39 31 35 39 29 33 37 30 34 38 3 36 3 15 37 20 7 39 7 7 39 7 15 37 20 11 38 21 12 40 22 0 41 0 8 43 23 8 43 23 0 41 0 4 42 4 12 44 12 13 45 13 16 47 24 16 47 24 13 45 13 17 46 25 13 48 13 1 49 17 17 51 25 17 51 25 1 49 17 18 50 26 0 53 16 19 54 27 1 52 17 1 52 17 19 54 27 18 55 26 12 57 12 16 58 24 0 56 16 0 56 16 16 58 24 19 59 27 15 61 15 21 62 29 14 60 14 14 60 14 21 62 29 20 63 28 15 64 15 3 65 19 21 67 29 21 67 29 3 65 19 22 66 30 3 68 19 2 69 18 22 71 30 22 71 30 2 69 18 23 70 31 14 73 14 20 74 28 2 72 18 2 72 18 20 74 28 23 75 31 16 76 24 17 77 25 24 79 32 24 79 32 17 77 25 25 78 33 18 81 26 26 82 34 17 80 25 17 80 25 26 82 34 25 83 33 18 84 26 19 85 27 26 87 34 26 87 34 19 85 27 27 86 35 19 88 27 16 89 24 27 91 35 27 91 35 16 89 24 24 90 32 20 92 28 21 93 29 28 95 36 28 95 36 21 93 29 29 94 37 22 97 30 30 98 38 21 96 29 21 96 29 30 98 38 29 99 37 22 100 30 23 101 31 30 103 38 30 103 38 23 101 31 31 102 39 23 104 31 20 105 28 31 107 39 31 107 39 20 105 28 28 106 36</p>
+				</triangles>
+			</mesh>
+			<extra>
+				<technique profile="MAYA">
+					<double_sided>1</double_sided>
+					<dynamic_attributes>
+						<miShadingSamplesOverride short_name="mso" type="bool">0</miShadingSamplesOverride>
+						<miShadingSamples short_name="msh" type="float">0</miShadingSamples>
+						<miMaxDisplaceOverride short_name="mdo" type="bool">0</miMaxDisplaceOverride>
+						<miMaxDisplace short_name="mmd" type="float">0</miMaxDisplace>
+					</dynamic_attributes>
+				</technique>
+			</extra>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="pCubeShape1-skin" name="skinCluster1">
+			<skin source="#pCubeShape1">
+				<bind_shape_matrix>3.13138 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="pCubeShape1-skin-joints">
+					<Name_array id="pCubeShape1-skin-joints-array" count="7">bone0 bone1 bone2 bone3 bone4 bone5 bone6</Name_array>
+					<technique_common>
+						<accessor count="7" source="#pCubeShape1-skin-joints-array">
+							<param name="JOINT" type="Name"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="pCubeShape1-skin-bind_poses">
+					<float_array id="pCubeShape1-skin-bind_poses-array" count="112">1 0 0 0 0 1 0 -0.14908 0 0 1 -0.155599 0 0 0 1 0 -0.985262 0.171052 -0.5021949999999999 0 0.171052 0.985262 0.088515 -1 0 0 1.05549 0 0 0 1 0 -0.97601 -0.217725 -2.61785 0 0.217725 -0.97601 0.984552 1 0 0 -1.05549 0 0 0 1 1 0 0 -1.05549 0 1 0 4.80921 0 0 1 0.064072 0 0 0 1 0 0.985262 -0.171052 0.5021949999999999 0 -0.171052 -0.985262 -0.088515 -1 0 0 -1.05549 0 0 0 1 0 0.97601 0.217725 2.61785 0 -0.217725 0.97601 -0.984553 1 0 0 1.05549 0 0 0 1 1 0 0 1.05549 0 -1 0 -4.80921 0 0 -1 -0.064072 0 0 0 1</float_array>
+					<technique_common>
+						<accessor count="7" source="#pCubeShape1-skin-bind_poses-array" stride="16">
+							<param name="TRANSFORM" type="float4x4"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="pCubeShape1-skin-weights">
+					<float_array id="pCubeShape1-skin-weights-array" count="7">1 0.997462 0.002105 0.00036 0.995197 0.00452 0.000159</float_array>
+					<technique_common>
+						<accessor count="7" source="#pCubeShape1-skin-weights-array">
+							<param name="WEIGHT" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#pCubeShape1-skin-joints"/>
+					<input semantic="INV_BIND_MATRIX" source="#pCubeShape1-skin-bind_poses"/>
+				</joints>
+				<vertex_weights count="32">
+					<input offset="0" semantic="JOINT" source="#pCubeShape1-skin-joints" set="0"/>
+					<input offset="1" semantic="WEIGHT" source="#pCubeShape1-skin-weights" set="0"/>
+					<vcount>1 1 1 1 1 1 3 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 2 4 3 0 4 1 5 4 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 4 0 4 0 4 0 1 0 1 0 1 0 1 0 5 0 5 0 5 0 5 0 2 0 2 0 2 0 2 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="VisualSceneNode" name="legs_allkeyed">
+			<node id="pCube1" name="pCube1">
+				<rotate sid="rotateZ">0 0 1 0</rotate>
+				<rotate sid="rotateY">0 1 0 0</rotate>
+				<rotate sid="rotateX">1 0 0 0</rotate>
+				<instance_controller url="#pCubeShape1-skin">
+					<skeleton>#root</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="initialShadingGroup" target="#lambert1"/>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+			<node id="root" name="root" sid="bone0" type="JOINT">
+				<translate sid="translate">0 0.14908 0.155599</translate>
+				<rotate sid="jointOrientZ">0 0 1 0</rotate>
+				<rotate sid="jointOrientY">0 1 0 0</rotate>
+				<rotate sid="jointOrientX">1 0 0 0</rotate>
+				<rotate sid="rotateY">0 1 0 4.74537</rotate>
+				<node id="LeftForeLeg" name="LeftForeLeg" sid="bone1" type="JOINT">
+					<translate sid="translate">1.05549 -0.659014 -0.156908</translate>
+					<rotate sid="jointOrientZ">0 0 1 -90</rotate>
+					<rotate sid="jointOrientY">0 1 0 -9.84901</rotate>
+					<rotate sid="jointOrientX">1 0 0 90</rotate>
+					<rotate sid="rotateZ">0 0 1 -6.64352</rotate>
+					<rotate sid="rotateY">0 1 0 0</rotate>
+					<rotate sid="rotateX">1 0 0 3.7963</rotate>
+					<node id="leftLeg" name="leftLeg" sid="bone2" type="JOINT">
+						<translate sid="translate">2.29327 0 0</translate>
+						<rotate sid="jointOrientZ">0 0 1 -22.4245</rotate>
+						<rotate sid="jointOrientY">0 1 0 0</rotate>
+						<rotate sid="jointOrientX">1 0 0 180</rotate>
+						<rotate sid="rotateZ">0 0 1 7.5926</rotate>
+						<node id="leftFoot" name="leftFoot" sid="bone3" type="JOINT">
+							<translate sid="translate">2.08994 0 0</translate>
+							<rotate sid="jointOrientZ">0 0 1 -90</rotate>
+							<rotate sid="jointOrientY">0 1 0 -90</rotate>
+							<rotate sid="jointOrientX">1 0 0 167.425</rotate>
+							<extra>
+								<technique profile="MAYA">
+									<segment_scale_compensate>1</segment_scale_compensate>
+								</technique>
+							</extra>
+						</node>
+						<extra>
+							<technique profile="MAYA">
+								<segment_scale_compensate>1</segment_scale_compensate>
+							</technique>
+						</extra>
+					</node>
+					<extra>
+						<technique profile="MAYA">
+							<segment_scale_compensate>1</segment_scale_compensate>
+						</technique>
+					</extra>
+				</node>
+				<node id="rightForeLeg" name="rightForeLeg" sid="bone4" type="JOINT">
+					<translate sid="translate">-1.05549 -0.659014 -0.156908</translate>
+					<rotate sid="jointOrientZ">0 0 1 90</rotate>
+					<rotate sid="jointOrientY">0 1 0 9.84901</rotate>
+					<rotate sid="jointOrientX">1 0 0 -90</rotate>
+					<rotate sid="rotateZ">0 0 1 6.64352</rotate>
+					<rotate sid="rotateY">0 1 0 2.84722</rotate>
+					<rotate sid="rotateX">1 0 0 0</rotate>
+					<node id="rightLeg" name="rightLeg" sid="bone5" type="JOINT">
+						<translate sid="translate">-2.29327 0 0</translate>
+						<rotate sid="jointOrientZ">0 0 1 -22.4245</rotate>
+						<rotate sid="jointOrientY">0 1 0 0</rotate>
+						<rotate sid="jointOrientX">1 0 0 180</rotate>
+						<rotate sid="rotateZ">0 0 1 -3.7963</rotate>
+						<node id="rightFoot" name="rightFoot" sid="bone6" type="JOINT">
+							<translate sid="translate">-2.08994 -0 0</translate>
+							<rotate sid="jointOrientZ">0 0 1 0</rotate>
+							<rotate sid="jointOrientY">0 1 0 -90</rotate>
+							<rotate sid="jointOrientX">1 0 0 77.42449999999999</rotate>
+							<extra>
+								<technique profile="MAYA">
+									<segment_scale_compensate>1</segment_scale_compensate>
+								</technique>
+							</extra>
+						</node>
+						<extra>
+							<technique profile="MAYA">
+								<segment_scale_compensate>1</segment_scale_compensate>
+							</technique>
+						</extra>
+					</node>
+					<extra>
+						<technique profile="MAYA">
+							<segment_scale_compensate>1</segment_scale_compensate>
+						</technique>
+					</extra>
+				</node>
+				<extra>
+					<technique profile="MAYA">
+						<segment_scale_compensate>1</segment_scale_compensate>
+					</technique>
+				</extra>
+			</node>
+			<extra>
+				<technique profile="FCOLLADA">
+					<start_time>0.041666</start_time>
+					<end_time>1</end_time>
+				</technique>
+			</extra>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#VisualSceneNode"/>
+	</scene>
+</COLLADA>
