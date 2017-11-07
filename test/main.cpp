@@ -745,4 +745,3 @@ public:
 };
 
 O3D_CONSOLE_MAIN(ColladaTest, O3D_DEFAULT_CLASS_SETTINGS)
-
