@@ -1,7 +1,7 @@
 /**
  * @file collada.cpp
  * @brief Implementation of Collada.h
- * @author Frederic SCHERMA (frederic.scherma@gmail.com)
+ * @author Frederic SCHERMA (frederic.scherma@dreamoverflow.org)
  * @date 2008-04-22
  * @copyright Copyright (c) 2001-2017 Dream Overflow. All rights reserved.
  * @details 

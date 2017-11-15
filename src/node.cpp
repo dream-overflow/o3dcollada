@@ -1,7 +1,7 @@
 /**
  * @file node.cpp
  * @brief Implementation of Node.h
- * @author Frederic SCHERMA (frederic.scherma@gmail.com)
+ * @author Frederic SCHERMA (frederic.scherma@dreamoverflow.org)
  * @date 2008-04-29
  * @copyright Copyright (c) 2001-2017 Dream Overflow. All rights reserved.
  * @details 
