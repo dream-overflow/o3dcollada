@@ -10,7 +10,7 @@
 #ifndef _O3D_COLLADA_GLOBAL_H
 #define _O3D_COLLADA_GLOBAL_H
 
-#include <o3d/core/objects.h>
+#include <o3d/core/datetime.h>
 
 #include <o3d/engine/hierarchy/node.h>
 #include <o3d/engine/object/geometrydata.h>
@@ -189,10 +189,10 @@ public:
 	inline const String& getComment() const { return m_comment; }
 
 	//! Get the created date.
-	inline const Date& getCreated() const { return m_created; }
+    inline const DateTime& getCreated() const { return m_created; }
 
 	//! Get the modified date.
-	inline const Date& getModified() const { return m_modified; }
+    inline const DateTime& getModified() const { return m_modified; }
 
 	//! Get the revision name.
 	inline const String& getRevisionName() const { return m_revision; }
@@ -215,8 +215,8 @@ protected:
 	String m_comment;
 	String m_copyright;
 
-	Date m_created;
-	Date m_modified;
+    DateTime m_created;
+    DateTime m_modified;
 
 	String m_revision;
 	String m_subject;
@@ -232,4 +232,3 @@ protected:
 } // namespace o3d
 
 #endif // _O3D_COLLADA_GLOBAL_H
-
