@@ -202,7 +202,7 @@ public:
 
 		// Add true type font for show informations.
 		DiskFileInfo fontFile("arial.ttf");
-		if (fontFile.isExist())
+		if (fontFile.exists())
             m_font = getGui()->getFontManager()->addTrueTypeFont("arial.ttf");
 		else
             m_font = getGui()->getFontManager()->addTrueTypeFont(sceneRoot + "/gui/arial.ttf");
@@ -216,7 +216,7 @@ public:
 		Theme *theme;
 
 		DiskFileInfo themeFile("revolutioning.xml");
-		if (themeFile.isExist())
+		if (themeFile.exists())
             theme = getGui()->getThemeManager()->addTheme("revolutioning.xml");
 		else
             theme = getGui()->getThemeManager()->addTheme(sceneRoot + "/gui/revolutioning.xml");
