@@ -25,9 +25,9 @@ Int32 triangulate(DAE *_dae);
 
 // ctor
 Collada::Collada() :
-	m_scene(NULL),
-	m_doc(NULL),
-	m_dom(NULL)
+    m_scene(nullptr),
+    m_doc(nullptr),
+    m_dom(nullptr)
 {
 }
 
@@ -333,18 +333,18 @@ Int32 triangulate(DAE *_dae)
 	Int32 error = 0;
 
 	// How many geometry elements are there?
-	Int32 geometryElementCount = (Int32)(_dae->getDatabase()->getElementCount(NULL, "geometry" ));
+    Int32 geometryElementCount = (Int32)(_dae->getDatabase()->getElementCount(nullptr, "geometry" ));
 
 	for (Int32 currentGeometry = 0; currentGeometry < geometryElementCount; currentGeometry++)
 	{
 		// Find the next geometry element
 		domGeometry *thisGeometry;
-		error = _dae->getDatabase()->getElement((daeElement**)&thisGeometry,currentGeometry, NULL, "geometry");
+        error = _dae->getDatabase()->getElement((daeElement**)&thisGeometry,currentGeometry, nullptr, "geometry");
 
 		// Get the mesh out of the geometry
 		domMesh *thisMesh = thisGeometry->getMesh();
 
-		if (thisMesh == NULL)
+        if (thisMesh == nullptr)
 			continue;
 
 		// Loop over all the polygon elements

@@ -494,11 +494,11 @@ void CAnimation::generateKeys()
                                 channel.outputSrc->data[offset+Z]),
                             channel.outputSrc->data[offset+W]);
 
-                        KeyFrameSmooth<Quaternion> *key = NULL;
+                        KeyFrameSmooth<Quaternion> *key = nullptr;
                         key = FindRotationKeyFrame(quatRotTrack, channel.inputSrc->data[i]*invDuration);
 
                         // need a new key
-                        if (key == NULL)
+                        if (key == nullptr)
                         {
                             key = new KeyFrameSmooth<Quaternion>(
                                     channel.inputSrc->data[i]*invDuration,
