@@ -23,7 +23,7 @@ CBaseObject* ColladaInfo::findNodeUsingName(const String &name) const
 		if ((*it)->getName() == name)
 			return (*it);
 	}
-	return NULL;
+    return nullptr;
 }
 
 // Find a node using its sid
@@ -34,7 +34,7 @@ CBaseObject* ColladaInfo::findNodeUsingSid(const String &sid) const
 		if ((*it)->getStrId() == sid)
 			return (*it);
 	}
-	return NULL;
+    return nullptr;
 }
 
 // Find a node using its id
