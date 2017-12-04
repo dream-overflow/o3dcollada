@@ -25,9 +25,9 @@ Int32 triangulate(DAE *_dae);
 
 // ctor
 Collada::Collada() :
-	m_scene(NULL),
-	m_doc(NULL),
-	m_dom(NULL)
+    m_scene(NULL),
+    m_doc(NULL),
+    m_dom(NULL)
 {
 }
 
@@ -344,7 +344,7 @@ Int32 triangulate(DAE *_dae)
 		// Get the mesh out of the geometry
 		domMesh *thisMesh = thisGeometry->getMesh();
 
-		if (thisMesh == NULL)
+        if (thisMesh == nullptr)
 			continue;
 
 		// Loop over all the polygon elements
@@ -379,4 +379,3 @@ Int32 triangulate(DAE *_dae)
 	}
 	return 0;
 }
-
