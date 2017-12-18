@@ -198,7 +198,7 @@ Bool CGeometry::toScene()
 
 		m_scene->getMeshDataManager()->addMeshData(meshData);
 
-        O3D_LOG(Logger::INFO, String("Found geometry: ") + m_name);
+        O3D_MESSAGE(String("Found geometry: ") + m_name);
 
 		meshData->setGeometry(new o3d::GeometryData(meshData));
         //meshData->getGeometry()->setInterleave(True);

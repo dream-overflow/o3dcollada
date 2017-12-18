@@ -39,8 +39,8 @@
 #include <o3d/gui/widgetmanager.h>
 
 #include <o3d/core/commandline.h>
-#include <o3d/core/diskfileinfo.h>
-#include <o3d/core/diskdir.h>
+#include <o3d/core/fileinfo.h>
+#include <o3d/core/dir.h>
 #include <o3d/core/filemanager.h>
 #include <o3d/core/application.h>
 
@@ -201,11 +201,12 @@ public:
 		// thrown by two timers. And that it is possible to change easily these timings.
 
 		// Add true type font for show informations.
-		DiskFileInfo fontFile("arial.ttf");
-		if (fontFile.exists())
+        FileInfo fontFile("arial.ttf");
+        if (fontFile.exists()) {
             m_font = getGui()->getFontManager()->addTrueTypeFont("arial.ttf");
-		else
+        } else {
             m_font = getGui()->getFontManager()->addTrueTypeFont(sceneRoot + "/gui/arial.ttf");
+        }
 
 		m_font->setTextHeight(16);
 		m_font->setColor(Color(0.f, 1.f, 0.f));
@@ -215,7 +216,7 @@ public:
 		// We need a mouse look to pick on the screen, so simply load a GUI theme
 		Theme *theme;
 
-		DiskFileInfo themeFile("revolutioning.xml");
+		FileInfo themeFile("revolutioning.xml");
 		if (themeFile.exists())
             theme = getGui()->getThemeManager()->addTheme("revolutioning.xml");
 		else
@@ -552,7 +553,6 @@ public:
         // cleared log out file with new header
         Debug::instance()->setDefaultLog("collada.log");
         Debug::instance()->getDefaultLog().clearLog();
-        Debug::instance()->getDefaultLog().writeHeaderLog();
 
 		MemoryManager::instance()->enableLog(MemoryManager::MEM_RAM, 128);
 		MemoryManager::instance()->enableLog(MemoryManager::MEM_GFX);
@@ -580,19 +580,19 @@ public:
 			sceneRoot = FileManager::instance()->getWorkingDirectory();
 
 		// create resources directories if necessary
-		DiskDir sceneDir(sceneRoot);
+		Dir sceneDir(sceneRoot);
 		sceneDir.makeAbsolute();
 
-		if (sceneDir.check("models") != Dir::SUCCESS)
+		if (sceneDir.check("models") != BaseDir::SUCCESS)
 			sceneDir.makeDir("models");
 
-		if (sceneDir.check("textures") != Dir::SUCCESS)
+		if (sceneDir.check("textures") != BaseDir::SUCCESS)
 			sceneDir.makeDir("textures");
 
-		if (sceneDir.check("sounds") != Dir::SUCCESS)
+		if (sceneDir.check("sounds") != BaseDir::SUCCESS)
 			sceneDir.makeDir("sounds");
 
-		if (sceneDir.check("animations") != Dir::SUCCESS)
+		if (sceneDir.check("animations") != BaseDir::SUCCESS)
 			sceneDir.makeDir("animations");
 
 		// Our application object
@@ -736,9 +736,6 @@ public:
 
 		// Destroy any content
         deletePtr(myApp);
-
-        // write footer log
-        Debug::instance()->getDefaultLog().writeFooterLog();
 
 		return 0;
 	}

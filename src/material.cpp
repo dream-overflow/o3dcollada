@@ -440,7 +440,7 @@ void retrieveTexture(
     if (FileManager::instance()->isRelativePath(texture.texture))
 	{
         texture.texture = basePath + '/' + texture.texture;
-        File::adaptPath(texture.texture);
+        FileManager::adaptPath(texture.texture);
 	}
 
     O3D_MESSAGE(String("Found texture: ") + texture.texture);
