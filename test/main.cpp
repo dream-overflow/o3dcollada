@@ -39,8 +39,8 @@
 #include <o3d/gui/widgetmanager.h>
 
 #include <o3d/core/commandline.h>
-#include <o3d/core/fileinfo.h>
-#include <o3d/core/dir.h>
+#include <o3d/core/localfile.h>
+#include <o3d/core/localdir.h>
 #include <o3d/core/filemanager.h>
 #include <o3d/core/application.h>
 
@@ -201,7 +201,7 @@ public:
 		// thrown by two timers. And that it is possible to change easily these timings.
 
 		// Add true type font for show informations.
-        FileInfo fontFile("arial.ttf");
+        LocalFile fontFile("arial.ttf");
         if (fontFile.exists()) {
             m_font = getGui()->getFontManager()->addTrueTypeFont("arial.ttf");
         } else {
@@ -216,7 +216,7 @@ public:
 		// We need a mouse look to pick on the screen, so simply load a GUI theme
 		Theme *theme;
 
-		FileInfo themeFile("revolutioning.xml");
+		LocalFile themeFile("revolutioning.xml");
 		if (themeFile.exists())
             theme = getGui()->getThemeManager()->addTheme("revolutioning.xml");
 		else
@@ -580,7 +580,7 @@ public:
 			sceneRoot = FileManager::instance()->getWorkingDirectory();
 
 		// create resources directories if necessary
-		Dir sceneDir(sceneRoot);
+		LocalDir sceneDir(sceneRoot);
 		sceneDir.makeAbsolute();
 
 		if (sceneDir.check("models") != BaseDir::SUCCESS)
