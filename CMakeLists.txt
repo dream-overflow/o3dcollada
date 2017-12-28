@@ -11,6 +11,7 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 if(NOT MINGW AND ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    # compiler options
 	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/O2 /Zi /D_DEBUG /EHsc /MP /MDd /DO3D_DISABLE_RAM_MEMORY_MANAGER /DO3D_DISABLE_FAST_MEMORY_MANAGER")
 	set(CMAKE_CXX_FLAGS_RELEASE        "/O2 /DNDEBUG /EHsc /MP /MD /DO3D_DISABLE_RAM_MEMORY_MANAGER /DO3D_DISABLE_FAST_MEMORY_MANAGER /DO3D_DISABLE_GPU_MEMORY_MANAGER /DO3D_DISABLE_SPU_MEMORY_MANAGER")
 	set(CMAKE_CXX_FLAGS_DEBUG          "/D_DEBUG /Zi /EHsc /MP /MDd /DO3D_DISABLE_RAM_MEMORY_MANAGER /DO3D_DISABLE_FAST_MEMORY_MANAGER")
@@ -30,16 +31,37 @@ else()
 	set(CMAKE_C_FLAGS_RELEASE          "-O2 -DNDEBUG -DO3D_DISABLE_RAM_MEMORY_MANAGER -DO3D_DISABLE_FAST_MEMORY_MANAGER -DO3D_DISABLE_GPU_MEMORY_MANAGER -DO3D_DISABLE_SPU_MEMORY_MANAGER")
 	set(CMAKE_C_FLAGS_DEBUG            "-O0 -ggdb -D_DEBUG -DO3D_DISABLE_RAM_MEMORY_MANAGER -DO3D_DISABLE_FAST_MEMORY_MANAGER")
 	set(CMAKE_C_FLAGS_DEBUGFULL        "-O0 -ggdb -D_DEBUG")
+
+	if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
+        set(CMAKE_CXX_FLAGS_RELEASE    "-g0 -Os -DNDEBUG -ffunction-sections")
+    endif()
+
+    # linker options
+    set(CMAKE_SHARED_LINKER_FLAGS_RELEASE  "-Wl,--gc-sections")
+    set(CMAKE_MODULE_LINKER_FLAGS_RELEASE  "-Wl,--gc-sections")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE  "-Wl,--gc-sections")
+#    if(NOT MINGW)
+#        set(CMAKE_SHARED_LINKER_FLAGS_RELEASE  "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} -Wl,-fuse-ld=gold")
+#        set(CMAKE_MODULE_LINKER_FLAGS_RELEASE "${CMAKE_MODULE_LINKER_FLAGS_RELEASE} -Wl,-fuse-ld=gold")
+#        set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Wl,-fuse-ld=gold")
+#    endif()
 endif()
 
 #----------------------------------------------------------
 # externals libraries
 #----------------------------------------------------------
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+include(dreamoverflow)
 
-include(FindOpenGL)
-include(FindOpenAL)
+set (CMAKE_FIND_ROOT_PATH ${CMAKE_FIND_ROOT_PATH} $ENV{PREFIX})
+# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+
+if(!${O3D_TARGET_ANDROID})
+    find_package(OpenGL REQUIRED)
+endif()
+
+find_package(OpenAL REQUIRED)
+find_package(Objective3D REQUIRED)
 
 find_package(COLLADA_DOM COMPONENTS 1.4 REQUIRED)
 
@@ -149,54 +171,59 @@ link_directories(${COLLADA_LIBRARY_DIRS})
 # options
 #----------------------------------------------------------
 
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Android")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++14")
+    if (O3D_USE_SSE2)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
+    endif (O3D_USE_SSE2)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Android")
+
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-parameter -std=c++14 -fexceptions -Wextra")
-	if(O3D_USE_SSE2)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++14")
+	if (O3D_USE_SSE2)
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
-	endif(O3D_USE_SSE2)
+	endif (O3D_USE_SSE2)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-parameter -std=c++14 -fexceptions -Wextra")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++14")
 	if (O3D_USE_SSE2)
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
-	endif(O3D_USE_SSE2)
+	endif (O3D_USE_SSE2)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+	option(O3D_USE_SSE2 "Compile SSE2 optimizations" OFF)
 	if(MINGW)
-		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-parameter -std=c++11 -fexceptions -Wextra")
-		if (O3D_USE_SSE2)
-			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
-		endif(O3D_USE_SSE2)
-	else()
-		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DO3D_IMPORT_DLL")
-		if (O3D_USE_SSE2)
-			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:SSE2")
-		endif(O3D_USE_SSE2)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-parameter -std=c++14 -fexceptions -Wextra -DO3D_WIN32")
 	endif()
+    if(O3D_USE_SSE2)
+		if(MINGW)
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse2")
+		else()
+			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:SSE2")
+		endif()
+    endif (O3D_USE_SSE2)
+
+	# Windows subsystem
+	if(MSVC)
+		set(CMAKE_CREATE_WIN32_EXE "/SUBSYSTEM:WINDOWS /ENTRY:\"mainCRTStartup\"")
+	endif(MSVC)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
-if (O3D_USE_SSE2)
-	set(O3D_USE_SSE2 "")
-endif (O3D_USE_SSE2)
+# android only
+if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
+    set(EXTRA_CXX o3d/third/android/android_native_app_glue.c)  # @todo improve
+    set(ANDROID_LIBRARY "-llog -landroid -ldl -lEGL -lGLESv3")
+else()
+    set(EXTRA_CXX "")
+endif()
 
 #----------------------------------------------------------
 # resources
 #----------------------------------------------------------
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    file(COPY ${LIB_PATH}/share/o3d/shaders.zip DESTINATION ${CMAKE_BINARY_DIR})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	file(COPY ${LIB_PATH}/share/o3d/shaders.zip DESTINATION ${CMAKE_BINARY_DIR})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    file(COPY ${LIB_PATH}/share/o3d/shaders.zip DESTINATION ${CMAKE_BINARY_DIR})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+file(COPY ${OBJECTIVE3D_SHADERS_ZIP} DESTINATION ${CMAKE_BINARY_DIR})
 
 #----------------------------------------------------------
 # targets
