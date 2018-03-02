@@ -26,7 +26,7 @@
 #include <o3d/engine/animation/animationplayermanager.h>
 #include <o3d/engine/animation/animationmanager.h>
 
-#include <o3d/engine/object/primitive.h>
+#include <o3d/engine/primitive/primitive.h>
 #include <o3d/engine/object/ftransform.h>
 #include <o3d/engine/object/mtransform.h>
 #include <o3d/engine/object/camera.h>

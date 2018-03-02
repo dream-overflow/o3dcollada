@@ -233,8 +233,8 @@ Bool CGeometry::toScene()
         if (m_texCoords.isValid())
 		{
 			meshData->getGeometry()->createElement(
-					V_TEXCOORDS_2D_1_ARRAY,
-					SmartArrayFloat(m_texCoords.getData(),m_texCoords.getSize()));
+                        V_UV_MAP_ARRAY,
+                        SmartArrayFloat(m_texCoords.getData(),m_texCoords.getSize()));
 		}
 
 		// texture coordinates
@@ -665,4 +665,3 @@ UInt32 CGeometry::setVertexData(Offsets &offset, const domListOfUInts &values, U
 	m_lookupTable[index].push_back(count);
 	return count;
 }
-
